@@ -65,6 +65,7 @@ BEGIN
                 poster_path,
                 tagline,
                 overview,
+                spoken_languages,
                 genres,
                 production_companies,
                 production_countries
@@ -201,6 +202,13 @@ BEGIN
                     NULL
                 END AS overview,
             --You can just take in english overviews by doing LIKE '%A-Z%' since i did take in other lang in title and some more columns
+                CASE
+                    WHEN TRIM(spoken_languages) LIKE '[[{]%' 
+                         AND TRIM(spoken_languages) LIKE '%[}]]'
+                    THEN TRIM(spoken_languages)
+                    ELSE NULL
+                END AS spoken_languages,
+             
                 CASE
                     WHEN TRIM(genres) LIKE '[[{]%' 
                          AND TRIM(genres) LIKE '%[}]]'
