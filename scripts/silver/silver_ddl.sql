@@ -14,7 +14,6 @@
 
   This DDL is fully compatible with the Silver loading Stored Procedure.
 */
---------------movies-----------------------
 
 IF OBJECT_ID('nsilver.movies') IS NOT NULL
     DROP TABLE nsilver.movies;
@@ -48,12 +47,12 @@ CREATE TABLE nsilver.movies (
     poster_path           NVARCHAR(255),
     tagline               NVARCHAR(400),
     overview              NVARCHAR(MAX),
+    spoken_languages      NVARCHAR(MAX),
     genres                NVARCHAR(MAX),
     production_companies  NVARCHAR(MAX),
     production_countries  NVARCHAR(MAX)
 
 );
------------------ratings------------------
 IF OBJECT_ID('nsilver.ratings') IS NOT NULL 
 		DROP TABLE nsilver.ratings
 GO
@@ -63,7 +62,7 @@ CREATE TABLE nsilver.ratings(
 		movieId		INT,
 		rating		FLOAT,
 		timestamp	BIGINT);
---------------links-----------------------
+
 -- can skip ratings small as its just a subset of ratings
 IF OBJECT_ID('nsilver.links')IS NOT NULL
 		DROP TABLE nsilver.links
@@ -74,7 +73,7 @@ CREATE TABLE nsilver.links(
 		tmdbId		INT
 
 )
---------------credits-----------------------
+
 IF OBJECT_ID('nsilver.credits') IS NOT NULL
         DROP TABLE nsilver.credits
 GO
@@ -82,7 +81,7 @@ CREATE TABLE nsilver.credits(
         cast            NVARCHAR(MAX),
         crew            NVARCHAR(MAX),
         id              INT)
------------------Keywords-------------------
+---------------------Keywords---------------
 IF OBJECT_ID('nsilver.keywords') IS NOT NULL
         DROP TABLE nsilver.keywords
 GO
