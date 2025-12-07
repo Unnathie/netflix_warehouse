@@ -115,4 +115,3 @@ This was used for:
 ## 👩‍💻 Author
 **Unnathi E Naik**  
 Data Analyst | SQL | Data Warehousing
-```
