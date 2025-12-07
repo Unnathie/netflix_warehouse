@@ -1,5 +1,5 @@
 # netflix_warehouse
-```
+
 # 🎬 Netflix Medallion Data Warehouse (SQL Server)
 
 This project implements a complete **Medallion Architecture (Bronze → Silver → Gold)** using **SQL Server** on the Netflix Movies & Ratings dataset.  
